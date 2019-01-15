@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  .row.page-header
+   .col-lg-12
+    h1= sayfaBaslik
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="", method="post", id="mekanGuncelle")
+        -if(hata=="evet")
+          .alert.alert-danger(role="alert") Tüm alanlar gerekli  
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="name") Mekan Adı
+          .col-xs-12.col-sm-10
+            input#name.form-control(name="name",value=mekan.ad)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="address") Mekan Adresi
+          .col-xs-12.col-sm-10
+            input#address.form-control(name="address",value=mekan.adres)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="resources") İmkanlar
+          .col-xs-12.col-sm-10
+            input#resources.form-control(name="resources",value=mekan.imkanlar)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="lat") Enlem
+          .col-xs-12.col-sm-10
+            input#lat.form-control(name="lat",value=mekan.enlem,type="text")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="lng") Boylam
+          .col-xs-12.col-sm-10
+            input#lng.form-control(name="lng",value=mekan.boylam)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="dayo") Günler-1
+          .col-xs-12.col-sm-10
+            input#dayo.form-control(name="dayo",value=mekan.gunler1)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="openo") Açılış-1
+          .col-xs-12.col-sm-10
+            input#openo.form-control(name="openo",value=mekan.acilis1)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="closeo") Kapanış-1
+          .col-xs-12.col-sm-10
+            input#closeo.form-control(name="closeo",value=mekan.kapanis1)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="dayt") Günler-2
+          .col-xs-12.col-sm-10
+            input#dayt.form-control(name="dayt",value=mekan.gunler2)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="opent") Açılış-2
+          .col-xs-12.col-sm-10
+            input#opent.form-control(name="opent",value=mekan.acilis2)
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="closet") Kapanış-2
+          .col-xs-12.col-sm-10
+            input#closet.form-control(name="closet",value=mekan.kapanis2)
+        button.btn.btn-primary.pull-right Mekanı Güncelle  
+    .col-xs-12.col-md-6

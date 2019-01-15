@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .row.page-header
+   .col-lg-12
+    h1 Giriş Yap
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="", method="post", id="giris")
+        -if(hata=="evet")
+          .alert.alert-danger(role="alert") Tüm alanlar gerekli  
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="mail") E-posta
+          .col-xs-12.col-sm-10
+            input#mail.form-control(name="mail")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for='password') Şifre
+          .col-xs-12.col-sm-10
+            input#password.form-control(name="password")
+        button.btn.btn-success.pull-right Giriş Yap
+        button.btn.btn-link.pull-right
+          a(href='/kayitol') Kayıt Ol
+          small &nbsp;
+          small &nbsp;
+    .col-xs-12.col-md-6
